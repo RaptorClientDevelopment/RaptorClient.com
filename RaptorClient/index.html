@@ -1,0 +1,311 @@
+<!--
+    Base thanks to bootstrap (https://startbootstrap.com/snippets/navbar-logo)
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- MetaData -->
+    <!-- Charset -->
+    <meta charset="UTF-8">
+    <!-- Informations -->
+    <meta name="author" content="TechAle">
+    <meta name="description" content="1.12.2 minecraft anarchy client">
+    <meta name = "revised" content = "RitomG, 23/5/2021 (dd-MM-yyyy)" />
+    <!-- SocialMedia -->
+    <meta property="og:title" content="RaptorClient">
+    <meta property="og:description" content="1.12.2 Minecraft anarchy client">
+    <meta property="og:image" content="/Mainicon.png">
+    <meta name="twitter:image:alt" content="raptor logo">
+    <meta property="og:url" content="https://raptorclientdevelopment.github.io/RaptorClient.com/RaptorClient/index.html">
+    <!-- Better mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Search -->
+    <meta HTTP-EQUIV="keywords" content="RaptorClient Minecraft Utility Client By RitomG">
+    <meta HTTP-EQUIV="robots" content="RaptorClient Minecraft Utility Client By RitomG">
+    <meta HTTP-EQUIV="googlebot" content="RaptorClient Minecraft Utility Client By RitomG">
+    <meta name="google" content="notranslate" />
+    <!-- Title -->
+    <title>RaptorClient</title>
+    <!-- Icon -->
+    <link rel="icon" href="/Mainicon.png" type="image/png"> 
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- BootStrap things again -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- datasets -->
+    <!-- Since i cannot use any backend (we have to use github pages because they are free,
+         For creating something that i can read like i file, i have to create a file .js that contains every
+         variables we need.
+     -->
+    <script src="./datasets/playerDev.js"></script>
+    <script src="./datasets/modules.js"></script>
+    <script src="./datasets/versions.js"></script>
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" id="nav">
+        <div class="container" id="top">
+            <a class="navbar-brand" id="logo" href="#">
+                <img src="/Mainicon.png" alt="RaptorClient logo" width="50px" height="50px">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#modules">Modules</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Download">download</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#socials">socials</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Big img as back + title -->
+    <div id="img">
+        <div class="centred">RaptorClient<div id="subText">A Minecraft 1.12.2 anarchy client</div></div>
+    </div>
+
+    <!-- Modules -->
+    <div class="title" id="Modules">
+        <h2>Modules</h2>
+        <div>
+            RaptorClient gui using RaptorClient Theme for information on every RaptorClient module
+        </div>
+    </div>
+
+    <!--
+        Here there will be the gui
+     -->
+    <div class="row" id="output" style="margin-right: 0 !important; margin-left: 0 !important;">
+
+
+    </div>
+
+    <!--
+        This add every modules to the div above
+    -->
+    <script>
+        var output = '';
+
+        for(var section in dictionaryModules) {
+            output += '<div class="col-lg-2 col-md-4 col-sm-12 section" style="height: 60px">';
+            output += '<div class="name-section">' + section + ' </div>';
+            output += '<div class="modules displayNo">';
+            for(var module in dictionaryModules[section]) {
+                output += '<div class="module">' + module + ' </div>';
+            }
+            output += '</div></div>';
+        }
+
+        $('#output').html(output);
+
+
+
+    </script>
+
+
+
+    <!-- This is the custom alert  -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <!-- The entire alert -->
+        <div class="modal-dialog">
+            <!-- The content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- The title of the alert -->
+                    <h4 id="module_name"></h4>
+                </div>
+                <!-- The body of the alert -->
+                <div class="modal-body" id="module_description">
+
+                </div>
+                <!-- Close button of the alert -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Here, we manage the gui -->
+    <script type="text/javascript">
+
+        // When a section is clicked
+        $(".name-section").click(function(event) {
+            var clickedDiv = $(this);
+            var parent = clickedDiv.parent()[0];
+            var thisDiv = parent.children[1];
+            // If it's not open
+            if (thisDiv.classList.contains("displayNo")) {
+                // Open it
+                thisDiv.classList.remove("displayNo");
+                // Let it expands (without this, we will have a whole blue things everywhere
+                parent.style.height = "";
+            }else {
+                // Retract it
+                thisDiv.classList.add("displayNo");
+                // Let it expands (without this, we will have a whole blue things everywhere
+                parent.style.height = "60px";
+            }
+        });
+        // When we click a module
+        $(".module").click(function (event) {
+            var clickedDiv = $(this);
+            // Get the module name
+            var nameModule = clickedDiv.text().trim();
+            // Get the section
+            var nameSection = clickedDiv.parent().parent().text().split(" ")[0];
+            // Display it
+            $("#module_name").html(nameModule);
+            $("#module_description").html(dictionaryModules[nameSection][nameModule]);
+            $('#myModal').modal("show");
+        });
+    </script>
+
+    <!-- Download -->
+    <div class="title" id="Download">
+        <h2>Download</h2>
+        <div>
+            <h4>Select a version of RaptorClient to download</h4> 
+        </div>
+    </div>
+
+    <!-- Form for choosing the version -->
+    <div id="chooseVersion" class="container">
+        <div class="row">
+            <!-- We want that, when we are on mobile, they are one on top of others,
+                In other cases, no
+              -->
+            <div class="col-sm-12 col-ms-4">
+                <div class="form-group">
+                    <!-- Select version -->
+                    <label for="firstVersion">Select MainVersion</label>
+                    <select multiple class="form-control" id="firstVersion">
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12 col-ms-4">
+                <div class="form-group">
+                    <!-- Select sub-version -->
+                    <label for="secondVersion">Select Subversion</label>
+                    <select multiple class="form-control" id="secondVersion">
+
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12 col-ms-4">
+                <!-- Download it -->
+                <button type="submit" value="Download!" id="downloadBut" onclick="startDownload()">Download</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Set version -->
+    <script type="text/javascript">
+        var output = "";
+        var plus = "selected";
+        // We have to iterate the reverse because, we want the latest on top
+        for(var i = Object.keys(RaptorClientVer).length - 1; i > -1; i--) {
+            output += "<option "+plus+">" + Object.keys(RaptorClientVer)[i] + "</option>";
+            plus = "";
+        }
+        // Add it to html
+        $("#firstVersion").html(output);
+    </script>
+
+    <!-- Update Subversion + Download -->
+    <script>
+        var t;
+        // Function for updating
+        function updateSubVersion() {
+            // Get version
+            var version = $("#firstVersion")[0].value;
+            var output = "";
+            var plus = "selected";
+            t = version;
+            // Iterate for every values and add it
+            RaptorClientVer[version].forEach((value) => {
+                output += "<option "+plus+">" + value + "</option>";
+                plus = "";
+            })
+            $("#secondVersion").html(output);
+        }
+        // Update it
+        updateSubVersion();
+        // Add listener on version change value
+        $("#firstVersion").change(() => {
+            updateSubVersion();
+        })
+
+        // Function for starting download
+        function startDownload() {
+            // Get the version
+            var version = $("#firstVersion")[0].value + "." + $("#secondVersion")[0].value;
+            // Get the link
+            var link = "https://github.com/RaptorClientDevelopment/RaptorClient/releases/download/"+version+"/RaptorClient"+version+".jar";
+            // Display
+            $("#module_name").html("Thank you for downloading RaptorClient " + version);
+            $("#module_description").html("Now the download will be started, please wait...<br>" +
+                                            "If it doesn't start, <a href='"+link+"'>click this link</a>");
+            $('#myModal').modal("show");
+            // Open the page
+            window.open(link);
+        }
+    </script>
+
+    <!-- Socials -->
+    <div class="title" id="socials">
+        <h2>Socials</h2>
+        <div>
+            Get in contact with RitomG
+        </div>
+    </div>
+    <div class="container" id="socialsBack">
+        <div class="row">
+            <!-- Since every pictures are relative big, we have have on a mobile 2 pictures for row -->
+            <div class="col-12 col-sm-6 col-ms-3 imgPict">
+                <img src="./symbols/discord.png" alt="discord png" onclick="window.open('https://discord.gg/t4hTHEgE9E')">
+            </div>
+            <div class="col-12 col-sm-6 col-ms-3 imgPict">
+                <img src="./symbols/github.png" alt="github png" onclick="window.open('https://github.com/RaptorClientDevelopment/RaptorClient/')">
+            </div>
+            <div class="col-12 col-sm-6 col-ms-3 imgPict">
+            </div>
+            <div class="col-12 col-sm-6 col-ms-3 imgPict">
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            Created by TechAle, for Postman i just copy pasted for more info read the
+            <a class="text-dark" href="https://github.com/TechAle/RaptorClient-website/">readme.md</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</body>
+</html>
