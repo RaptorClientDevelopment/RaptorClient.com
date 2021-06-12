@@ -1,0 +1,86 @@
+<div class="row" id="output" style="margin-right: 0 !important; margin-left: 0 !important;">
+
+
+</div>
+
+<!--
+    This add every modules to the div above
+-->
+<script>
+    var output = '';
+
+    for(var section in dictionaryModules) {
+        output += '<div class="col-lg-2 col-md-4 col-sm-12 section" style="height: 60px">';
+        output += '<div class="name-section">' + section + ' </div>';
+        output += '<div class="modules displayNo">';
+        for(var module in dictionaryModules[section]) {
+            output += '<div class="module">' + module + ' </div>';
+        }
+        output += '</div></div>';
+    }
+
+    $('#output').html(output);
+
+
+
+</script>
+
+
+
+<!-- This is the custom alert  -->
+<div class="modal fade" id="myModal" role="dialog">
+    <!-- The entire alert -->
+    <div class="modal-dialog">
+        <!-- The content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- The title of the alert -->
+                <h4 id="module_name"></h4>
+            </div>
+            <!-- The body of the alert -->
+            <div class="modal-body" id="module_description">
+
+            </div>
+            <!-- Close button of the alert -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Here, we manage the gui -->
+<script type="text/javascript">
+
+    // When a section is clicked
+    $(".name-section").click(function(event) {
+        var clickedDiv = $(this);
+        var parent = clickedDiv.parent()[0];
+        var thisDiv = parent.children[1];
+        // If it's not open
+        if (thisDiv.classList.contains("displayNo")) {
+            // Open it
+            thisDiv.classList.remove("displayNo");
+            // Let it expands (without this, we will have a whole blue things everywhere
+            parent.style.height = "";
+        }else {
+            // Retract it
+            thisDiv.classList.add("displayNo");
+            // Let it expands (without this, we will have a whole blue things everywhere
+            parent.style.height = "60px";
+        }
+    });
+    // When we click a module
+    $(".module").click(function (event) {
+        var clickedDiv = $(this);
+        // Get the module name
+        var nameModule = clickedDiv.text().trim();
+        // Get the section
+        var nameSection = clickedDiv.parent().parent().text().split(" ")[0];
+        // Display it
+        $("#module_name").html(nameModule);
+        $("#module_description").html(dictionaryModules[nameSection][nameModule]);
+        $('#myModal').modal("show");
+    });
+</script>
