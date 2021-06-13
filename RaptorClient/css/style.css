@@ -13,7 +13,7 @@ html, body {
     height: 20%;
 }
 .navbar {
-    background-color: #79c1ff !important;
+    background-color: #18c435 !important;
 }
 @keyframes rainbow {
     0% { color: #ffffff; }
@@ -32,7 +32,7 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    color: lightslategrey;
+    color: rgb(1, 248, 63);
     animation: rainbow 10s infinite;
     animation-direction: alternate;
 
@@ -53,10 +53,10 @@ html, body {
     padding: 0 !important;
     border-style: solid;
     border-width: 2px;
-    border-color: lightslategrey;
+    border-color: rgb(0, 255, 13);
 }
 .name-section {
-    background-color: #79c1ff;
+    background-color: #00ff37;
     height: 30px;
     color: white;
     padding-left: 5px;
@@ -71,7 +71,7 @@ html, body {
 }
 #modules {
     background: rgb(255, 255, 255);
-    background: linear-gradient(0deg,lightslategrey 0%, rgb(12, 10, 20) 100% );
+    background: linear-gradient(0deg,rgb(0, 247, 41) 0%, rgb(12, 10, 20) 100% );
     padding-top: 100px;
     padding-bottom: 10px;
 }

@@ -1,13 +1,13 @@
 
 body {
-	background-color: #e0e0ff;
+	background-color: #d11711;
 	font-family: arial,helvetica,sans-serif;
 	margin: 0;
 }
 
 header {
 	color: white;
-	background-color: blue;
+	background-color: rgb(255, 0, 0);
 	text-align: center;
 	padding: 5px;
 }
@@ -19,7 +19,7 @@ header a {
 
 nav {
 	overflow: hidden;
-	background-color: #4080ff;
+	background-color: #32fa00;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
@@ -48,7 +48,7 @@ section {
 }
 
 footer {
-	background-color: #4080ff;
+	background-color: #26f31f;
 	color: white;
 	width: 100%;
 	position: -webkit-sticky;

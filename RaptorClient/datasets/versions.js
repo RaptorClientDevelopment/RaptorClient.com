@@ -1,5 +1,6 @@
 var RaptorClientVer = {
     "1" : [
         "0",
+        "1"
     ],
 }
