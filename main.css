@@ -1,13 +1,13 @@
 
 body {
-	background-color: #d11711;
+	background-color: #000000;
 	font-family: arial,helvetica,sans-serif;
 	margin: 0;
 }
 
 header {
 	color: white;
-	background-color: rgb(255, 0, 0);
+	background-color: rgb(0, 0, 0);
 	text-align: center;
 	padding: 5px;
 }
@@ -19,7 +19,7 @@ header a {
 
 nav {
 	overflow: hidden;
-	background-color: #32fa00;
+	background-color: #c800fa;
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0;
@@ -34,7 +34,7 @@ nav a {
 	padding: 10px 10px;
 }
 nav a.active {
-	background-color: #00c000;
+	background-color: #c800fa;
 }
 
 nav a:hover {
@@ -48,7 +48,7 @@ section {
 }
 
 footer {
-	background-color: #26f31f;
+	background-color: #c800fa;
 	color: white;
 	width: 100%;
 	position: -webkit-sticky;
